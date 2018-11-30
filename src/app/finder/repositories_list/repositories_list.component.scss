@@ -1,0 +1,75 @@
+$contrastColor: #4F7981;
+$baseColor: #c4dde1;
+
+.repositories-list-container {
+	width: 100%;
+	height: 100%;
+	
+	div.list-item.expanded {
+		height: 100%;
+	}
+
+	div.list-item.collapsed {
+		height: 210px;
+	}
+
+	div.list-repos {
+		width: 100%;
+		text-align: center;
+		div.list-item {
+			display: block;
+			color: $contrastColor;
+			background: $baseColor;
+			border-style: solid;
+			border-radius: 5px;
+			border-width: 2px;
+			border-color: $contrastColor;
+			text-align: justify;
+			font-weight: bold;
+
+			h4.name {
+				padding: 15px;
+			}
+
+			p.url {
+				padding: 15px;
+			}
+
+			span.show-comments {
+				padding-left: 10px;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+
+			div.comment-list {
+				display: block;
+				margin-top: 5px;
+				background : $contrastColor;
+				overflow-y: scroll;
+				div.comment-item {
+					margin: 0px;
+					display: block;
+					background : $contrastColor;
+					color: $baseColor;
+					border-color: contrastColor;
+					text-align: justify;
+					font-weight: bold;
+
+					span.comment-text {
+						padding: 5px;
+					}
+
+					span.comment-text.bold {
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+
+	.no-data {
+		color: gray;
+		font-size: 30px;
+		text-align: center;
+	}
+}

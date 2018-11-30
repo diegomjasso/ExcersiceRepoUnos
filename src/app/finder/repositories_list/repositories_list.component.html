@@ -1,0 +1,23 @@
+<div class="repositories-list-container">
+	<div class="list-repos" *ngIf="repositories_list.length > 0">
+		<div class="list-item" [ngClass]="{'expanded': repository.comments_list_show, 'collapsed': !repository.comments_list_show}" *ngFor="let repository of repositories_list; let i = index">
+			<h4 class="name"><span>Name:</span> {{ repository.name }}</h4>
+			<p class="url" ><span>URL: </span><a href="{repository.svn_url}" target="_blank">{{repository.svn_url}}</a></p>
+			<span class="show-comments"  (click)="showComments(i)" *ngIf="!repository.comments_list_show">Show comments</span>
+			<span class="show-comments" (click)="showComments(i)" *ngIf="repository.comments_list_show">Hide comments</span>
+			<div class="comment-list" *ngIf="repository.comments_list_show">
+				<div class="comment-item"  *ngFor="let comment of repository.comments_list">
+					<ul>
+						<li>
+							<span class="comment-text bold">User: </span><span class="comment-text">{{ comment.user.login }}</span>
+							<span class="comment-text bold">Comment: </span><span class="comment-text">{{ comment.body }}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="no-data" *ngIf="repositories_list.length === 0">
+		Not Data		
+	</div>
+</div>

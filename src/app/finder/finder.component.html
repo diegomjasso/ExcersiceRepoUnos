@@ -1,0 +1,9 @@
+<div class="finder">
+	<div class="finder-bar">
+		<span>{{ label_text }}</span>
+		<input type="text" name="repository-name" [ngModel]="name" (input)="findRepositories($event.target.value)" class="repository-name" placeholder="{{placeholder_text}}" />
+	</div>
+	<div class="my-repositories-list">
+		<repositorieslist [repositories_list]="repositories_list" ></repositorieslist>
+	</div>
+</div>
